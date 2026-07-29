@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6366f1" />
+  <title>login / signup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="hero-panel" aria-label="Product introduction">
+      <div class="hero-copy-wrap">
+        <h1>Software Engineering assignment</h1>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div>
+            <p class="eyebrow" id="ae">Create account</p>
+            <h2 id="at">Register your workspace</h2>
+            <p id="asb">Set up your profile in under a minute.</p>
+          </div>
+          <div class="auth-pill">Secure • Local</div>
+        </div>
+
+        <div id="al" class="alert" role="status" aria-live="polite" hidden></div>
+
+        <div class="tab-row" aria-label="Authentication mode selector">
+          <button type="button" class="tab active" data-mode="register" id="rt">Register</button>
+          <button type="button" class="tab" data-mode="signin" id="st">Sign In</button>
+        </div>
+
+        <form id="rf" class="form-stack" novalidate>
+          <div class="fg">
+            <label for="fullName">Full Name</label>
+            <div class="field-shell">
+              <span class="field-icon">✦</span>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Alex Morgan" />
+            </div>
+            <small class="fm" id="fnm"></small>
+          </div>
+
+          <div class="fg">
+            <label for="registerEmail">Email Address</label>
+            <div class="field-shell">
+              <span class="field-icon">✉</span>
+              <input id="registerEmail" name="email" type="email" autocomplete="email" placeholder="alex@company.com" />
+            </div>
+            <small class="fm" id="rem"></small>
+          </div>
+
+          <div class="fg">
+            <label for="registerPassword">Password</label>
+            <div class="field-shell pf">
+              <span class="field-icon">🔐</span>
+              <input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="Create a strong password" />
+              <button type="button" class="ib" data-target="registerPassword" aria-label="Toggle password visibility">Show</button>
+            </div>
+            <div class="sm" aria-hidden="true">
+              <div id="sbar" class="sb"></div>
+            </div>
+            <p id="stx" class="st">Password strength will appear here.</p>
+            <small class="fm" id="rpm"></small>
+          </div>
+
+          <div class="fg">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="field-shell pf">
+              <span class="field-icon">🔒</span>
+              <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat the password" />
+              <button type="button" class="ib" data-target="confirmPassword" aria-label="Toggle password visibility">Show</button>
+            </div>
+            <small class="fm" id="cpm"></small>
+          </div>
+
+          <button id="rb" class="pb" type="submit" disabled>Register</button>
+          <p class="sc">Already registered? <button type="button" class="tt" id="gs">Go to sign in</button></p>
+        </form>
+
+        <form id="sf" class="form-stack hidden" novalidate>
+          <div class="fg">
+            <label for="signinEmail">Email Address</label>
+            <div class="field-shell">
+              <span class="field-icon">✉</span>
+              <input id="signinEmail" name="email" type="email" autocomplete="email" placeholder="alex@company.com" />
+            </div>
+            <small class="fm" id="sem"></small>
+          </div>
+
+          <div class="fg">
+            <label for="signinPassword">Password</label>
+            <div class="field-shell pf">
+              <span class="field-icon">🔐</span>
+              <input id="signinPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" />
+              <button type="button" class="ib" data-target="signinPassword" aria-label="Toggle password visibility">Show</button>
+            </div>
+            <small class="fm" id="spm"></small>
+          </div>
+
+          <div class="meta">
+            <label class="cb">
+              <input id="rm" type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <button type="button" class="tt" id="fpb">Forgot Password?</button>
+          </div>
+
+          <button id="sb" class="pb" type="submit">Sign In</button>
+          <p class="sc">Need an account? <button type="button" class="tt" id="gr">Create one</button></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="md" class="md hidden" role="dialog" aria-modal="true" aria-labelledby="ft">
+    <div class="mc">
+      <div class="mh">
+        <div>
+          <p class="eyebrow">Reset access</p>
+          <h2 id="ft">Forgot password</h2>
+        </div>
+        <button type="button" class="ib cbt" id="cf" aria-label="Close reset dialog">Close</button>
+      </div>
+
+      <div id="fse" class="ms">
+        <p class="mcp">Enter the email that was used during registration.</p>
+        <div class="fg">
+          <label for="resetEmail">Registered Email</label>
+          <div class="field-shell">
+            <span class="field-icon">✉</span>
+            <input id="resetEmail" type="email" placeholder="alex@company.com" />
+          </div>
+          <small class="fm" id="remm"></small>
+        </div>
+        <button type="button" class="pb" id="vre">Continue</button>
+      </div>
+
+      <div id="fsp" class="ms hidden">
+        <p class="mcp">Set a new password for your account.</p>
+        <div class="fg">
+          <label for="newPassword">New Password</label>
+          <div class="field-shell pf">
+            <span class="field-icon">🔐</span>
+            <input id="newPassword" type="password" placeholder="Create a new password" />
+            <button type="button" class="ib" data-target="newPassword" aria-label="Toggle password visibility">Show</button>
+          </div>
+          <small class="fm" id="npm"></small>
+        </div>
+        <div class="fg">
+          <label for="confirmNewPassword">Confirm New Password</label>
+          <div class="field-shell pf">
+            <span class="field-icon">🔒</span>
+            <input id="confirmNewPassword" type="password" placeholder="Repeat the new password" />
+            <button type="button" class="ib" data-target="confirmNewPassword" aria-label="Toggle password visibility">Show</button>
+          </div>
+          <small class="fm" id="cnpm"></small>
+        </div>
+        <button type="button" class="pb" id="upb">Update Password</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="lo" class="lo hidden" aria-hidden="true">
+    <div class="lc">
+      <div class="sp"></div>
+      <p>Verifying credentials...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

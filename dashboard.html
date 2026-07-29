@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6366f1" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="dashboard-shell">
+    <section class="dashboard-card">
+      <nav class="dashboard-nav">
+        <div class="brand-mark">A</div>
+        <div class="nav-actions">
+          <span class="chip">Signed in</span>
+          <button type="button" class="primary-button" id="signOutButton">Sign Out</button>
+        </div>
+      </nav>
+
+      <div class="dashboard-grid">
+        <div>
+          <div class="greeting-card">
+            <h1 id="welcomeTitle">Software Engineering assignment completed.</h1>
+            <p class="dashboard-copy" id="welcomeCopy">
+              The authentication flow, validation rules, LocalStorage handoff, and polished interface design are in place.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <h3>Session</h3>
+              <p>Live</p>
+            </article>
+            <article class="stat-card">
+              <h3>Protection</h3>
+              <p>Strong</p>
+            </article>
+            <article class="stat-card">
+              <h3>Storage</h3>
+              <p>Local</p>
+            </article>
+            <article class="stat-card">
+              <h3>Flow</h3>
+              <p>Complete</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "aurum_auth_user";
+    const SESSION_KEY = "aurum_auth_session";
+    const signOutButton = document.getElementById("signOutButton");
+    const welcomeTitle = document.getElementById("welcomeTitle");
+    const welcomeCopy = document.getElementById("welcomeCopy");
+
+    const user = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    const session = JSON.parse(localStorage.getItem(SESSION_KEY) || "null");
+
+    if (!user || !session) {
+      window.location.href = "index.html";
+    } else {
+      const firstName = user.fullName.split(" ")[0] || user.fullName;
+      welcomeTitle.textContent = `Welcome back, ${firstName}.`;
+      welcomeCopy.textContent = `Signed in as ${user.email}. Your credentials were verified from browser storage on ${new Date(session.loginAt).toLocaleString()}.`;
+    }
+
+    signOutButton.addEventListener("click", () => {
+      localStorage.removeItem(SESSION_KEY);
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
