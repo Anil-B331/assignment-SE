@@ -28,7 +28,7 @@
 
         <div id="al" class="alert" role="status" aria-live="polite" hidden></div>
 
-        <div class="tab-row" aria-label="Authentication mode selector">
+        <div class="tab-row" role="group" aria-label="Authentication mode selector">
           <button type="button" class="tab active" data-mode="register" id="rt">Register</button>
           <button type="button" class="tab" data-mode="signin" id="st">Sign In</button>
         </div>
@@ -57,7 +57,7 @@
             <div class="field-shell pf">
               <!-- <span class="field-icon">🔐</span> -->
               <input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="Create a strong password" />
-              <button type="button" class="ib" data-target="registerPassword" aria-label="Toggle password visibility">Show</button>
+              <button type="button" class="ib" data-target="registerPassword">Show</button>
             </div>
             <div class="sm" aria-hidden="true">
               <div id="sbar" class="sb"></div>
@@ -71,7 +71,7 @@
             <div class="field-shell pf">
               <!-- <span class="field-icon">🔒</span> -->
               <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat the password" />
-              <button type="button" class="ib" data-target="confirmPassword" aria-label="Toggle password visibility">Show</button>
+              <button type="button" class="ib" data-target="confirmPassword">Show</button>
             </div>
             <small class="fm" id="cpm"></small>
           </div>
@@ -95,7 +95,7 @@
             <div class="field-shell pf">
               <!-- <span class="field-icon">🔐</span> -->
               <input id="signinPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" />
-              <button type="button" class="ib" data-target="signinPassword" aria-label="Toggle password visibility">Show</button>
+              <button type="button" class="ib" data-target="signinPassword">Show</button>
             </div>
             <small class="fm" id="spm"></small>
           </div>
@@ -111,6 +111,7 @@
           <button id="sb" class="pb" type="submit">Sign In</button>
           <p class="sc">Need an account? <button type="button" class="tt" id="gr">Create one</button></p>
         </form>
+
       </div>
     </section>
   </main>
@@ -144,8 +145,8 @@
           <label for="newPassword">New Password</label>
           <div class="field-shell pf">
             <span class="field-icon">🔐</span>
-            <input id="newPassword" type="password" placeholder="Create a new password" />
-            <button type="button" class="ib" data-target="newPassword" aria-label="Toggle password visibility">Show</button>
+            <input id="newPassword" type="password" autocomplete="new-password" placeholder="Create a new password" />
+            <button type="button" class="ib" data-target="newPassword">Show</button>
           </div>
           <small class="fm" id="npm"></small>
         </div>
@@ -153,8 +154,8 @@
           <label for="confirmNewPassword">Confirm New Password</label>
           <div class="field-shell pf">
             <span class="field-icon">🔒</span>
-            <input id="confirmNewPassword" type="password" placeholder="Repeat the new password" />
-            <button type="button" class="ib" data-target="confirmNewPassword" aria-label="Toggle password visibility">Show</button>
+            <input id="confirmNewPassword" type="password" autocomplete="new-password" placeholder="Repeat the new password" />
+            <button type="button" class="ib" data-target="confirmNewPassword">Show</button>
           </div>
           <small class="fm" id="cnpm"></small>
         </div>

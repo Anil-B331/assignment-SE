@@ -6,7 +6,7 @@
   --panel-strong: #ffffff;
   --line: rgba(76, 187, 23, 0.22);
   --text: #1B5E20;
-  --muted: #4F6B52;
+  --muted: #2E4A33;
   --primary: #4CBB17;
   --secondary: #66BB6A;
   --accent: #2E7D32;
@@ -71,7 +71,6 @@ button {
 .mc,
 .lc {
   backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
@@ -302,12 +301,12 @@ button {
   background: transparent;
   padding: 8px 12px;
   border-radius: 999px;
-  color: var(--muted);
+  color: #24402A;
   transition: all 0.2s ease;
 }
 
 .tab.active {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
   color: #ffffff;
   box-shadow: 0 10px 20px rgba(76, 187, 23, 0.28);
 }
@@ -331,7 +330,7 @@ button {
 
 label {
   font-size: 0.84rem;
-  color: #2E7D32;
+  color: #1B5E20;
   font-weight: 600;
 }
 
@@ -481,7 +480,7 @@ label {
   border: 0;
   background: none;
   padding: 0;
-  color: var(--primary);
+  color: #1B5E20;
   font-weight: 700;
 }
 
@@ -596,7 +595,6 @@ form.hidden {
   padding: 22px;
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
@@ -612,6 +610,8 @@ form.hidden {
   width: 42px;
   height: 42px;
   border-radius: 14px;
+  /* background: linear-gradient(135deg, #0F3D18, #1B5E20); */
+  color: #ffffff;
 }
 
 .nav-actions {
@@ -623,8 +623,8 @@ form.hidden {
 .nav-actions .chip {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(76, 187, 23, 0.1);
-  color: var(--primary);
+  background: #1B5E20;
+  color: #ffffff;
   font-size: 0.84rem;
   font-weight: 600;
 }
@@ -639,7 +639,7 @@ form.hidden {
 
 .primary-button {
   color: #ffffff;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, #0F3D18, #1B5E20);
 }
 
 .secondary-button {
